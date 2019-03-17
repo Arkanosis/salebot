@@ -94,7 +94,7 @@ sub update_regex
     my ($page_name) = @_;
     die "update_regex: page_name not set" unless $page_name;
 
-    my $regex_file = "regex-vandalism";
+    my $regex_file = "/var/db/salebot/regex-vandalism";
     if ( $config->{enable_regex_update} )
     {
         my $text = get_page_text($page_name);
