@@ -1,0 +1,12 @@
+[Unit]
+Description=Salebot service
+
+[Service]
+Type=simple
+User=salebot
+WorkingDirectory=/opt/salebot
+ExecStart=/usr/bin/perl salebot2.pl
+Restart=always
+
+[Install]
+WantedBy=default.target
