@@ -338,7 +338,7 @@ sub notify_user
     {
 
         # Add banner after "{{IP ...}}" banner if it already exists
-        if ( ( $text =~ /{{IP.+?}}/ ) or ( $text =~ /{{Avertissement.+?}}/ ) )
+        if ( ( $text =~ /\{\{IP.+?}}/ ) or ( $text =~ /\{\{Avertissement.+?}}/ ) )
         {
             $text =~ s/}}/}}\n$banner/;    # Assumes {{IP...}} is first on page
         }
@@ -761,7 +761,7 @@ sub sanitize_wiki_string
     }
 
     # Matched
-    s/{{(.+?)}}/{{m|$1}}/g;
+    s/\{\{(.+?)}}/\{\{m|$1}}/g;
     s/\[\[(\w+:.+?)\]\]/\[\[:$1\]\]/g;
 
     return $_;

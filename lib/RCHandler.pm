@@ -444,7 +444,7 @@ sub handle_new_or_edit
         $log->debug("user namespace edit, new threshold : $rc->{threshold_vandalism}");
     }
 
-    if ( defined @{ $rc->{messages} } )
+    if ( @{ $rc->{messages} } )
     {
         $rc->{messages_str} = join( " ; ", @{ $rc->{messages} } );
 
