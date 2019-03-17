@@ -14,13 +14,21 @@ Salebot runs on the French and Portuguese Wikipedias.
 
 ## Installation on Debian Stretch
 
-The following commands must be run as root
+The following commands must be run as root:
 
 ```sh
 git clone https://github.com/Arkanosis/salebot.git /opt/salebot
 useradd -r salebot
 cp /opt/salebot/contribs/systemd/salebot.service /etc/systemd/system
+mkdir /etc/salebot
+cp /opt/salebot/config/samples/salebot.conf.sample /etc/salebot/salebot.conf
+apt install libpoe-perl liblog-log4perl-perl libclass-dbi-perl libregexp-ipv6-perl libmediawiki-api-perl libtext-unaccent-perl libnet-dns-perl
+mkdir -p /usr/local/share/perl5/Net
+curl 'http://www.cpan.org/authors/id/B/BO/BORISZ/Net-DNSBLLookup-0.05.tar.gz' | tar xz -C /tmp Net-DNSBLLookup-0.05/lib
+mv /tmp/Net-DNSBLLookup-0.05/lib/Net/* /usr/local/share/perl5/Net
 ```
+
+Edit the configuration in `/etc/salebot/salebot.conf`.`
 
 ## Usage
 

@@ -10,7 +10,7 @@ our @EXPORT =
   qw(config_init $PREFIX $config);
 our $VERSION = 0.01;
 
-our $config_file   = ".config";
+our $config_file   = "/etc/salebot/salebot.conf";
 our $PREFIX;
 our $config;
 

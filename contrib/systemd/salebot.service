@@ -5,6 +5,7 @@ Description=Salebot service
 Type=simple
 User=salebot
 WorkingDirectory=/opt/salebot
+Environment=PERL5LIB=/usr/local/share/perl5
 ExecStart=/usr/bin/perl salebot2.pl
 Restart=always
 

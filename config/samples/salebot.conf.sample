@@ -1,0 +1,7 @@
+use_config='frwiki.conf'
+wiki_pass=''
+bot_pass='default'
+db_server='localhost'
+db_user='salebot'
+db_pass='password'
+db_name='salebot'
